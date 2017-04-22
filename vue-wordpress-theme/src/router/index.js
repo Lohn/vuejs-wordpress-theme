@@ -7,6 +7,7 @@ import Page from '@/components/pages/Page.vue'
 import CategoryPage from '@/components/pages/CategoryPage.vue'
 import Author from '@/components/pages/Author.vue'
 import Search from '@/components/pages/Search.vue'
+import Archives from '@/components/pages/Archives.vue'
 import NotFoundPage from '@/components/pages/404.vue'
 
 Vue.use(Router)
@@ -24,6 +25,12 @@ export default new Router({
       name: 'About',
       path: '/about',
       component: Page
+    },
+
+    {
+      name: 'Archives',
+      path: '/archives',
+      component: Archives
     },
 
     {
@@ -47,6 +54,12 @@ export default new Router({
     {
       name: 'Search',
       path: '/search/:searchTerm',
+      component: Search
+    },
+
+    {
+      name: 'SearchDate',
+      path: '/search-date',
       component: Search
     },
 
