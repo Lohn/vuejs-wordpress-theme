@@ -43,7 +43,13 @@ export default{
     },
 
     getPosts () {
-      axios.get(process.env.API_URL + '/wp-json/wp/v2/posts?categories=' + this.category.id)
+      let postsUrl = process.env.API_URL + '/wp-json/wp/v2/posts?categories=' + this.category.id
+
+      if (this.$route.query.page !== undefined) {
+        postsUrl += '&page=' + this.$route.query.page
+      }
+
+      axios.get(postsUrl)
       .then(response => {
         this.posts = response.data
       })
